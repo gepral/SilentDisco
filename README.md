@@ -5,8 +5,8 @@ Here is a simple flow chart:
 
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
+    Router-->B;
+    Router-->C;
     B-->D;
     C-->D;
 ```
