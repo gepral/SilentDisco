@@ -1,7 +1,27 @@
 # SilentDisco
-Discoteca del Silenci
 
-Objects Diagram
+# Server Preparation
+1. Start server and put up to date all packages
+
+```shell
+$  sudo apt update
+$  sudo apt upgrade
+$  sudo reboot
+```
+
+2. Install all needed apps for the project
+
+```shell
+$  sudo apt install icecast2
+$  sudo apt install atop
+```
+
+3. 
+
+
+
+
+# Objects Diagram
 
 ```mermaid
 flowchart TB
