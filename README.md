@@ -1,7 +1,7 @@
 # SilentDisco
 Discoteca del Silenci
 
-Here is a simple flow chart:
+Objects Diagram
 
 ```mermaid
 flowchart TB
