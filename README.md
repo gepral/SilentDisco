@@ -1,25 +1,13 @@
 # SilentDisco
 
-# Server Preparation
-1. Start server and put up to date all packages
-
-```shell
-$  sudo apt update
-$  sudo apt upgrade
-$  sudo reboot
-```
-
-2. Install all needed apps for the project
-
-```shell
-$  sudo apt install icecast2
-$  sudo apt install atop
-```
-
-3. 
-
-
-
+# Material
+- Domestic Router
+- Raspberry Pi 5
+- Micro SD
+- Laptop
+- USB Audio Interface ( Used an old Audio 6 from Native Instruments )
+- Wifi Access Point (If desired)
+- Some Ethernet Cables 
 
 # Objects Diagram
 
@@ -49,7 +37,7 @@ flowchart TB
     end
 
     subgraph Network Map
-    Laptop-.-ButSoftware-..-Server
+    Laptop-.-BUTT_Software-..-Server
     SoundStream-.- USB -.-> Laptop
     Router<==>Server
     Laptop-->Router
@@ -71,3 +59,69 @@ Antenas-.-Users
 
     
 ```
+
+# Software 
+To be installed on the computer:
+- Ubuntu imager for Raspberry: (https://ubuntu.com/download/raspberry-pi)
+- Butt Broadcast tool: (https://danielnoethen.de/butt/)
+
+
+# Server Preparation (Raspberry or WSL)
+1. Start server and put up to date all packages
+
+```shell
+$  sudo apt update
+$  sudo apt upgrade
+$  sudo reboot
+```
+
+2. Install all needed apps for the project
+   - When installing IceCast2 you can press enter on default configurations or put your own password for each user
+
+```shell
+$  sudo apt install icecast2
+$  sudo apt install atop
+```
+
+3. Enable the icecast server to start at server boot
+
+```shell
+$  sudo systemctl enable icecast2
+$  sudo systemctl start icecast2
+```
+4. Validate that icecast is running fine with one of this 2 commands
+
+```shell
+$  ps -aux | grep icecast
+$  systemctl status icecast2
+```
+
+5. Next (optional), Changing the Logs folder to be inside the icecast installation and config folder
+
+```shell
+$  cd /etc/icecast2
+$  sudo mkdir logs
+$  sudo chmod 777 logs
+```
+
+6. Edit finally the logs destination folder just created on the config file
+
+```shell
+$  sudo nano /etc/icecast2/icecast.xml
+```
+Then change on the file the <logdir> content by the following one
+
+```xml
+<logdir>/etc/icecast2/logs</logdir>
+```
+
+
+7. 
+
+
+
+
+
+
+
+
